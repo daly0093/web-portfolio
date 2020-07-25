@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Montserrat-Black;
+    src: url(fonts/Montserrat-Black.ttf)
+}
+
+h1 {
+    font-family: Montserrat-Black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
