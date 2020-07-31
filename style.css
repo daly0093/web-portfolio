@@ -18,9 +18,11 @@
     src: url(fonts/Montserrat-Light.ttf)
 }
 
-img,
-section {
-    margin: 0 10%;
+body {
+    background-image: url(images/background-image.JPG);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 main {
@@ -29,21 +31,12 @@ main {
 
 p {
     color: white;
-}
-
-body {
-    background-image: url(images/background-image.JPG);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-h1 {
-    font-family: Montserrat-Black;
-}
-
-p {
     font-family: Montserrat-Regular;
+}
+
+img,
+section {
+    margin: 0 10%;
 }
 
 img {
@@ -70,8 +63,9 @@ header {
 }
 
 header a {
-    font-family: Montserrat-Bold;
-    font-size: 1rem;
+    font-family: Montserrat-Light;
+    text-transform: uppercase;
+    font-size: 1.75rem;
     text-decoration: none;
     color: white;
     display: none;
@@ -80,12 +74,13 @@ header a {
 .links a:nth-child(2) {
     display: block;
     text-decoration: underline;
-    margin: 15px 100px;
-    padding-left: 50px; 
+    margin: 15px 0px;
+    padding-left: 0px; 
 }
 
 .active {
     text-decoration: underline;
+    font-family: Montserrat-Regular;
 }
 
 header img {
@@ -95,6 +90,7 @@ header img {
 .introduction p {
     text-align: center;
     margin: 25px 0;
+    font-size: 1.5rem;
 }
 
 section img {
@@ -104,7 +100,10 @@ section img {
 
 .photography-button img,
 .videography-button img,
-.coding-button img {
+.coding-button img,
+.education img,
+.prs img,
+.hobbies img{
     height: 500px;
     object-fit: cover;
     object-position: 10% center;
@@ -120,7 +119,10 @@ section img {
 
 .photography-button p:nth-child(1),
 .videography-button p:nth-child(1),
-.coding-button p:nth-child(1) {
+.coding-button p:nth-child(1),
+.education p:nth-child(1),
+.prs p:nth-child(1),
+.hobbies p:nth-child(1) {
     position: relative;
     text-align: center;
     font-size: 1.5rem;
@@ -165,52 +167,76 @@ footer div {
 }
 
 @media (min-width: 768px) {
-    header img {
-        display: none;
+    .links {
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        width: 100%;
+        margin: 35px;
+    }
+    
+    .links a:nth-child(2) {
+        display: block;
+        margin: 0 auto;
+        padding: 0; 
     }
 
     header a {
         display: block;
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
+        font-size: 1.5rem;
     }
 
-    .links {
-        display: flex;
-        flex-direction: row;
-        margin: 35px;
-    }
-
-    .links a:nth-child(2) {
-        display: block;
-        margin: 0px;
-        padding: 0px; 
+    header img {
+        display: none;
     }
 
     .introduction p {
         font-size: 2rem;
+        margin: 25px 0 0 0;
     }
 
     .photography-button,
     .videography-button,
-    .coding-button {
+    .coding-button,
+    .education,
+    .prs,
+    .hobbies {
         display: grid;
         grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
         grid-template-areas:
             "first-paragraph text"
     }
 
     .photography-button div,
     .videography-button div,
-    .coding-button div {
+    .coding-button div,
+    .education div,
+    .prs div,
+    .hobbies div {
         grid-area: first-paragraph;
+        height: 400px; 
     }
 
     .photography-button p:nth-child(1),
     .videography-button p:nth-child(1),
-    .coding-button p:nth-child(1) {
+    .coding-button p:nth-child(1),
+    .education p:nth-child(1),
+    .prs p:nth-child(1),
+    .hobbies p:nth-child(1) {
+        top: 223.5px;
         padding: 10px;
         margin: 0 50px;
+    }
+
+    .photography-button img,
+    .videography-button img,
+    .coding-button img,
+    .education img,
+    .prs img,
+    .hobbies img {
+        height: 400px;
     }
 
     .photography-button img {
@@ -227,11 +253,18 @@ footer div {
 
     .photography-button p:nth-child(2),
     .videography-button p:nth-child(2),
-    .coding-button p:nth-child(2) {
+    .coding-button p:nth-child(2),
+    .education p:nth-child(2),
+    .prs p:nth-child(2),
+    .hobbies p:nth-child(2) {
         grid-area: text;
         display: block;
-        margin: 50px 0 0 5px;
-        font-size: 1.5rem;
+        margin: 47px 0 0 5px;
+        font-size: 1.25rem;
+    }
+
+    .coding-button {
+        margin-bottom: 100px;
     }
 }
 
@@ -241,12 +274,19 @@ footer div {
         margin: 0 20%;
     }
 
+    .introduction p {
+        font-size: 3rem;
+    }
+
     .photography-button,
     .videography-button,
-    .coding-button {
+    .coding-button,
+    .education,
+    .prs,
+    .hobbies {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 90% 10%;
+        grid-template-rows: 65% 10%;
         grid-template-areas:
             "first-paragraph"
             "text"
@@ -254,33 +294,123 @@ footer div {
 
     .photography-button img,
     .videography-button img,
-    .coding-button img {
+    .coding-button img,
+    .education img,
+    .prs img,
+    .hobbies img {
         height: 300px;
         width: 100%;
         object-fit: cover;
         object-position: 10% center;
     }
 
+    .coding-button img {
+        object-position: 10% top;   
+    }
+
+    .photography-button div,
+    .videography-button div,
+    .coding-button div,
+    .education div,
+    .prs div,
+    .hobbies div {
+        height: 300px;
+    }
+
     .photography-button p:nth-child(1),
     .videography-button p:nth-child(1),
-    .coding-button p:nth-child(1) {
-        top: 223px;
+    .coding-button p:nth-child(1),
+    .education p:nth-child(1),
+    .prs p:nth-child(1),
+    .hobbies p:nth-child(1) {
+        top: 176px;
+        font-size: 1.75rem;
+        margin: 0 30%;
+    }
+
+    .photography-button p:nth-child(2),
+    .videography-button p:nth-child(2),
+    .coding-button p:nth-child(2),
+    .education p:nth-child(2),
+    .prs p:nth-child(2),
+    .hobbies p:nth-child(2) {
+        text-align: center;
+    }
+
+    .coding-button{
+        margin: 0 20%;
+    }
+
+    footer {
+        margin-top: 100px;
     }
 }
 
+#portrait {
+    height: 775px;
+    object-fit: cover;
+}
 
+.prs img {
+    object-position: 45% center;
+}
 
+.hobbies img {
+    object-position: 45% center;
+}
 
+.education,
+.prs,
+.hobbies,
+.top {
+    margin: 0 10%; 
+}
 
+.top p { 
+    text-align: center;
+}
 
+@media (min-width: 768px) {
+    .education,
+    .prs,
+    .hobbies {
+        margin: 50px 10%;
+    }
 
+    .top p {
+        font-size: 1.25rem;
+    }
 
+    .prs p:nth-child(2) {
+        margin: 75px 0 0 5px;
+    }
+    
+    .education p:nth-child(1),
+    .prs p:nth-child(1),
+    .hobbies p:nth-child(1) {
+        margin: 0 20%;
+    }
+}
 
+@media (min-width: 1200px) {
+    .top,
+    .education,
+    .prs,
+    .hobbies {
+        margin: 0 20%;
+        font-size: 1.75rem;
+    }
 
+    #portrait {
+        height: 700px;
+    }
 
-
-
-
+    .education p:nth-child(2),
+    .prs p:nth-child(2),
+    .hobbies p:nth-child(2) {
+        margin: 70px 0 5px 5px;
+    }
+}
 
 
 
