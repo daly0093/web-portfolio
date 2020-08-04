@@ -496,8 +496,9 @@ main p {
     }
 
     form input {
-        width: 33%;
+        width: 32.9%;
         clear: right;
+        font-size: 1.5rem;
     }
 
     input[id="lname"],
@@ -506,7 +507,7 @@ main p {
     }
 
     input[id="message"] {
-        width: 66.6%;
+        width: 66.5%;
         padding-bottom: 40px;
         resize: none;
     }
