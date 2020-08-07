@@ -1,3 +1,5 @@
+/* Some global variables that are used throughout the document, from lines 3 and 52 */
+
 @font-face {
     font-family: Montserrat-Black;
     src: url(fonts/Montserrat-Black.ttf)
@@ -49,10 +51,9 @@ section {
     margin: 25px 10%;
 }
 
+/* HOME PAGE : MOBILE VIEW (lines 57 to 226) */
 
-
-
-
+/* The header is being worked on here, from lines 57 to 136. I chose to use flex because I felt more comfortable using flex than grid when working with headers. */
 header {
     background-color: #1E90FF;
     display: flex;
@@ -87,9 +88,56 @@ header img {
     margin: 0;
 }
 
+/* Lines 92 to 136 deals with the dropdown menu you can see in the mobile view for all pages. */
+.dropbtn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(30, 144, 255, 0.75);
+    min-width: 100vw;
+    z-index: 1;
+    right: -13px;
+    text-align: center;
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 30px 16px;
+    text-decoration: underline;
+    display: block;
+    color: white;
+    font-size: 1rem;
+    background-color: dodgerblue;
+}
+
+.dropdown-content a:last-child {
+    margin-bottom: 100vh;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: dodgerblue;
+}
+
 .introduction p {
     text-align: center;
-    margin: 25px 10% 60px 10%;
+    margin: 25px 10% 60px;
     font-size: 1.5rem;
 }
 
@@ -98,6 +146,7 @@ section img {
     margin: 0;
 }
 
+/* From lines 150 to 201, most of the important sections are being affected here. Specifically in the home page (photography, videography, and coding) and the about page (education, program related skills, and hobbies). */
 .photography-button img,
 .videography-button img,
 .coding-button img,
@@ -117,12 +166,14 @@ section img {
     object-position: 6% center;
 }
 
-.photography-button p:nth-child(1),
-.videography-button p:nth-child(1),
-.coding-button p:nth-child(1),
+.photography-button a,
+.videography-button a,
+.coding-button a,
 .education p:nth-child(1),
 .prs p:nth-child(1),
 .hobbies p:nth-child(1) {
+    font-family: Montserrat-Regular;
+    text-decoration: none;
     position: relative;
     text-align: center;
     font-size: 1.5rem;
@@ -133,23 +184,29 @@ section img {
     color: black;
 }
 
+.photography-button a,
+.videography-button a,
+.coding-button a {
+    display: block;
+    top: 287px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 30%;
+}
+
 .photography-button p:nth-child(2),
 .videography-button p:nth-child(2),
 .coding-button p:nth-child(2) {
     display: none;
 }
 
+/* The footer is being set up here from lines 204 to 226, this includes the back to top link also. */
 footer {
     background-color: #1E90FF;
     display: grid;
     grid-template-columns: 25% 50% 25%;
     align-items: center;
     justify-content: center;
-}
-
-footer a {
-    margin: 0;
-    font-size: 1rem;
 }
 
 footer div {
@@ -164,9 +221,14 @@ footer div {
     color: white;
     font-family: Montserrat-Regular;
     text-decoration: none;
+    margin: 0;
+    font-size: 1rem;
 }
 
+/* HOME PAGE : TABLET VIEW (lines 230 to 341) */
+
 @media (min-width: 768px) {
+    /* Here, the links are introduced for the tablet view. This is from lines 232 to 243. The header is also altered here from line 232 all the way down to line 254. */
     .links {
         display: grid;
         grid-template-columns: 25% 50% 25%;
@@ -195,6 +257,7 @@ footer div {
         font-size: 2rem;
     }
 
+    /* Again, here we're adjusting most of those sections above from lines 261 all the way down to 334. */
     .photography-button,
     .videography-button,
     .coding-button,
@@ -218,15 +281,19 @@ footer div {
         height: 400px; 
     }
 
-    .photography-button p:nth-child(1),
-    .videography-button p:nth-child(1),
-    .coding-button p:nth-child(1),
     .education p:nth-child(1),
     .prs p:nth-child(1),
     .hobbies p:nth-child(1) {
         top: 223.5px;
         padding: 10px;
         margin: 0 50px;
+    }
+
+    .photography-button a,
+    .videography-button a,
+    .coding-button a {
+        top: 223.5px;
+        padding: 10px;
     }
 
     .photography-button img,
@@ -265,7 +332,16 @@ footer div {
     .coding-button {
         margin-bottom: 100px;
     }
+    
+    /* This just hides the dropdown menu since it would be pointless to have it, with the already visible navigation bar displayed at the top. */
+    .dropdown,
+    .dropbtn,
+    .dropdown-content {
+        display: none;
+    }
 }
+
+/* HOME PAGE : DESKTOP VIEW (lines 346 to 427) */
 
 @media (min-width: 1200px) {
     img,
@@ -277,6 +353,7 @@ footer div {
         font-size: 3rem;
     }
 
+    /* Once more, we're making minor changes to most of the sections above from lines 357 to 422. */
     .photography-button,
     .videography-button,
     .coding-button,
@@ -316,15 +393,19 @@ footer div {
         height: 300px;
     }
 
-    .photography-button p:nth-child(1),
-    .videography-button p:nth-child(1),
-    .coding-button p:nth-child(1),
     .education p:nth-child(1),
     .prs p:nth-child(1),
     .hobbies p:nth-child(1) {
         top: 176px;
         font-size: 1.75rem;
         margin: 0 30%;
+    }
+
+    .photography-button a,
+    .videography-button a,
+    .coding-button a {
+        top: 176px;
+        font-size: 1.75rem;
     }
 
     .photography-button p:nth-child(2),
@@ -345,11 +426,14 @@ footer div {
     }
 }
 
+/* ABOUT PAGE : MOBILE VIEW (lines 431 to 454) */
+/* This block of code just sets the height and object-fit of the portrait that I have on the about page. */
 #portrait {
     height: 775px;
     object-fit: cover;
 }
 
+/* Here from lines 430 to 447, the education section, program related skills section, the hobbies section, as well as the "top" section are being adjusted.  */
 .prs img {
     object-position: 45% center;
 }
@@ -369,6 +453,7 @@ footer div {
     text-align: center;
 }
 
+/* ABOUT PAGE : TABLET VIEW (lines 457 to 485) */
 @media (min-width: 768px) {
     .education,
     .prs,
@@ -397,14 +482,9 @@ footer div {
     .hobbies p:nth-child(2) {
         margin: 123px 0 0 5px;
     }
-
-    .dropdown,
-    .dropbtn,
-    .dropdown-content {
-        display: none;
-    }
 }
 
+/* ABOUT PAGE : DESKTOP VIEW (lines 488 to 510) */
 @media (min-width: 1200px) {
     .top,
     .education,
@@ -429,18 +509,22 @@ footer div {
     }
 }
 
+/* CONTACT PAGE : MOBILE VIEW (lines 514 to 562) */
+/* In the following block of code, the main image shown on the contact page is being set up here. */
 #contact {
     height: 400px;
     object-fit: cover;
     object-position: 0%;
 }
 
+/* From lines 520 to 557, the form in the contact page is being styled. */
 form {
     margin: 20px auto;
     padding: 0 10%;
 }
 
-form input {
+form input,
+textarea {
     background-color: rgb(30, 144, 255);
     color: white;
     font-family: Montserrat-Regular;
@@ -457,7 +541,7 @@ input[id="subject"] {
     float: right;
 }
 
-input[id="message"] {
+textarea {
     width: 100%;
     padding-bottom: 100px;
     resize: none;
@@ -478,6 +562,7 @@ main p {
     text-align: center;
 }
 
+/* CONTACT PAGE : TABLET VIEW (lines 565 to 576) */
 @media (min-width: 768px) {
     #contact {
         height: 350px;
@@ -491,7 +576,9 @@ main p {
     }
 }
 
+/* CONTACT PAGE : DESKTOP VIEW (lines 579 to 611) */
 @media (min-width: 1200px) {
+    /* Here the form is being altered to fit 3 columns at a time. Also from it goes from lines 580 to 607. */
     .introduction p,
     form {
         margin: 0 20%;
@@ -502,8 +589,7 @@ main p {
     }
 
     form input {
-        width: 32.9%;
-        clear: right;
+        width: 33%;
         font-size: 1.5rem;
     }
 
@@ -512,10 +598,12 @@ main p {
         float: none;
     }
 
-    input[id="message"] {
-        width: 66.5%;
-        padding-bottom: 40px;
+    textarea {
+        width: 66.6%;
+        padding-bottom: 20px;
         resize: none;
+        font-size: 1.5rem;
+        float: right;
     }
 
     input[type="submit"] {
@@ -524,145 +612,59 @@ main p {
     }
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: dodgerblue;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* VIDEOGRAPHY PAGE : MOBILE VIEW (lines 615 to 617) */
+/* For these next few blocks of code (614 to 630), they just adjust the margin size of the videography-videos class in the videography page. */
+.videography-videos {
+    margin: 60% 10%;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+/* VIDEOGRAPHY PAGE : TABLET VIEW (lines 620 to 624) */
+@media (min-width: 768px) {
+    .videography-videos {
+        margin: 30% 10%;
+    }
+}
+
+/* VIDEOGRAPHY PAGE : DESKTOP VIEW (lines 627 to 631) */
+@media (min-width: 1200px) {
+    .videography-videos {
+        margin: 5% 10%;
+    }
+}
+
+/* CODING PAGE : MOBILE VIEW (lines 635 to 638) */
+/* Here's a simple method that will show the mobile versions of the images on the coding page while hiding the tablet and desktop versions. */
+#tablet,
+#tablet1,
+#desktop,
+#desktop1 {
     display: none;
-    position: absolute;
-    background-color: rgba(30, 144, 255, 0.75);
-    min-width: 100vw;
-    z-index: 1;
-    left: -400px;
-    text-align: center;
-    margin: 0;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 30px 16px;
-    text-decoration: underline;
-    display: block;
-    color: white;
-    font-size: 1rem;
-    background-color: dodgerblue;
+/* CODING PAGE : TABLET VIEW (lines 642 to 650) */
+/* In this @media, it's the same simple method. But instead of showing the mobile version of the images on the coding page while hiding the tablet and desktop versions, it will show the tablet version of the images on the coding page, but hide the mobile and desktop versions. */
+@media (min-width: 768px) {
+    #mobile,
+    #mobile1 {
+        display: none;
+    }
+
+    #tablet,
+    #tablet1 {
+        display: block;
+    }
 }
 
-.dropdown-content a:last-child {
-    margin-bottom: 100vh;
+/* CODING PAGE : DESKTOP VIEW (lines 654 to 662) */
+/* Finally, this block of code shows only the desktop version of the images on the coding page. */
+@media (min-width: 1200px) {
+    #tablet,
+    #tablet1 {
+        display: none;
+    }
+
+    #desktop,
+    #desktop1 {
+        display: block;
+    }
 }
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: dodgerblue;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.top {
-    margin: 0;
-}
-
-.top img {
-    width: 100%;
-    height: 750px;
-    object-fit: none;
-    margin: 0;
-}
-
-.top p {
-    text-align: center;
-    margin: 30px 10% 0 10%;
-}
-
-#contact {
-    height: 500px;
-}
-
-form {
-    margin: 50px auto;
-    padding: 0 10%;
-}
-
-form input {
-    background-color: rgb(30, 144, 255);
-    color: white;
-    font-family: Montserrat-Regular;
-    text-align: center;
-    padding: 10px 0px 25px 0px;
-    border: 0;
-    margin: 10px 0;
-    width: 49%;
-    text-decoration: underline;
-}
-
-input[id="message"] {
-    width: 100%;
-    padding-bottom: 100px;
-    resize: none;
-}
-
-input::placeholder {
-    color: white;
-    font-family: Montserrat-Regular;
-} */
